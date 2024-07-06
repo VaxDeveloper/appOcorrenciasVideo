@@ -1,4 +1,3 @@
-// dados.php
 <?php
 // Importa as configurações do banco de dados
 require_once 'database.php';
