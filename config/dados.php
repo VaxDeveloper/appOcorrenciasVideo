@@ -1,10 +1,14 @@
+// dados.php
 <?php
 // Importa as configurações do banco de dados
 require_once 'database.php';
 
+// Obtém o número de linhas por página a partir do POST ou define um valor padrão
+$rowsPerPage = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+
 // Verifica se a conexão está definida e não é null
 if ($conexao) {
-    $consulta_sql = "SELECT * FROM ocorrencia_trafego ORDER BY id DESC";
+    $consulta_sql = "SELECT * FROM ocorrencia_trafego ORDER BY id DESC LIMIT $rowsPerPage";
     $resultado_consulta = mysqli_query($conexao, $consulta_sql);
 
     if ($resultado_consulta) {
