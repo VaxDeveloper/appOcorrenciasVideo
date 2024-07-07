@@ -57,7 +57,7 @@
                     </div>
                     <div class="card shadow">
                         <div class="card-body">
-                            <?php include '../config/....'; ?>
+                            <?php include '../config/ver_ocorrencia.php'; ?>
                         </div>
                     </div>
                 </div>
