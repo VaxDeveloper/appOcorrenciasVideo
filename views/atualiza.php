@@ -58,7 +58,7 @@
                     <div class="card shadow">
                         <div class="card-body">
                             <div>
-                                <?php include '../config/ver_ocorrencia.php';?>
+                                <?php include '../config/atualizaTr.php';?>
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,8 @@
                     if (isset($_GET['id'])) {
                         $id_ocorrencia = $_GET['id'];
 
-                        // Conecta ao banco de dados
-                        $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u219851065_smiguel");
+                        // Importa as configurações do banco de dados
+                        require_once 'database.php';
 
                         // Prepara e executa a consulta para obter os detalhes da ocorrência com base no ID
                         $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_trafego WHERE id = $id_ocorrencia";
@@ -16,7 +16,6 @@
                             $detalhes_ocorrencia = mysqli_fetch_assoc($resultado_consulta);
                             // Aqui você pode exibir os detalhes da ocorrência dentro de uma caixa de texto
                             echo "<div class='container detalhes-ocorrencia'>";
-                            echo "<h1 class='mt-4 detalhes'>Detalhes da Ocorrência:</h1>";
                             echo "<div class='row my-4' style='color: #adb5bd;'>";
                             echo "<div class='col-4 detalhes-info-1' style='border-right: solid 1px #6c757d;'>";
                             echo "<p><strong>ID Ocorrência:</strong> " . $detalhes_ocorrencia['id'] . "</p>";
@@ -50,7 +49,7 @@
                             
                             // Adicionar um formulário para enviar as informações do motorista, ação e observações
                             echo "<div class='container p-3'>";
-                            echo "<form action='atualizaTr.php' method='post'>";
+                            echo "<form action='atualiza.php' method='post'>";
                             
                             // Continuação do formulário...
 
