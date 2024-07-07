@@ -21,6 +21,7 @@
                             echo "<p><strong>ID Ocorrência:</strong> " . $detalhes_ocorrencia['id'] . "</p>";
                             echo "<p><strong>Data:</strong> " . $detalhes_ocorrencia['data'] . "</p>";
                             echo "<p><strong>Horário:</strong> " . $detalhes_ocorrencia['horario'] . "</p>";
+                            echo "<p><strong>Fiscal:</strong> " . $detalhes_ocorrencia['fiscal'] . "</p>";
 
                             // Constrói o caminho do arquivo de vídeo
                             $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video1']}";
@@ -30,16 +31,17 @@
                             echo "<div class='d-flex'>";
                             echo "<p><strong>Link:</strong></p>";
                             // Adiciona um link para download do vídeo
-                            echo "<a class='mt-1 mx-2 link-danger' href='download_videoTr.php?video1={$detalhes_ocorrencia['id']}'>Vídeo-1</a>";
-                            echo "<a class='mt-1 mx-2 link-danger' href='download_videoTr.php?video2={$detalhes_ocorrencia['id']}'>Vídeo-2</a>";
-                            echo "<a class='mt-1 mx-2 link-danger' href='download_videoTr.php?video3={$detalhes_ocorrencia['id']}'>Vídeo-3</a>";
+                            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video1={$detalhes_ocorrencia['id']}'>Vídeo-1</a>";
+                            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video2={$detalhes_ocorrencia['id']}'>Vídeo-2</a>";
+                            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video3={$detalhes_ocorrencia['id']}'>Vídeo-3</a>";
                             echo "</div>";
                             echo "</div>";
                             echo "<div class='col-8 detalhes-info-2'>";
+                            echo "<p><strong>Linha:</strong> " . $detalhes_ocorrencia['linha'] . "</p>";
+                            echo "<p><strong>Carro:</strong> " . $detalhes_ocorrencia['carro'] . "</p>";
                             echo "<p><strong>Motorista:</strong> " . $detalhes_ocorrencia['motorista'] . "</p>";
                             echo "<p><strong>Ocorrência:</strong> " . $detalhes_ocorrencia['ocorrencia'] . "</p>";
                             echo "<p class='text-wrap w-100'><strong>Descrição:</strong> " . $detalhes_ocorrencia['descricao'] . "</p>";
-                            echo "<p><strong>Ação:</strong> " . $detalhes_ocorrencia['acao'] . "</p>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
