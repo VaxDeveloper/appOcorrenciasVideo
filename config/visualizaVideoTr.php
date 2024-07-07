@@ -37,9 +37,9 @@ if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) 
         mysqli_stmt_close($stmt);
 
         // Depuração: Verificar os valores retornados
-        echo "video1: $caminho_arquivo1<br>";
-        echo "video2: $caminho_arquivo2<br>";
-        echo "video3: $caminho_arquivo3<br>";
+        // echo "video1: $caminho_arquivo1<br>";
+        // echo "video2: $caminho_arquivo2<br>";
+        // echo "video3: $caminho_arquivo3<br>";
 
         // Corrigir extensão do arquivo, se necessário
         if (strpos($caminho_arquivo1, '.mp4') === false) {
@@ -54,27 +54,31 @@ if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) 
 
         // Verifica e exibe o vídeo correspondente
         if ($video_column == 'video1' && !empty($caminho_arquivo1)) {
-            $video_path = "C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo1);
+            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo1));
         } elseif ($video_column == 'video2' && !empty($caminho_arquivo2)) {
-            $video_path = "C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo2);
+            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo2));
         } elseif ($video_column == 'video3' && !empty($caminho_arquivo3)) {
-            $video_path = "C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo3);
+            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo3));
         } else {
             $video_path = null;
         }
 
         // Depuração: Verificar o caminho do vídeo
-        echo "video_path: $video_path<br>";
+        // echo "video_path: $video_path<br>";
 
         if ($video_path && file_exists($video_path)) {
+            // Obter a URL do vídeo
+            $video_url = str_replace(realpath($_SERVER['DOCUMENT_ROOT']), '', $video_path);
+            $video_url = str_replace('\\', '/', $video_url); // Corrigir para caminhos no Windows
+
             // Exibe o vídeo
             echo '<video width="600" controls>
-                    <source src="' . $video_path . '" type="video/mp4">
+                    <source src="' . $video_url . '" type="video/mp4">
                     Seu navegador não suporta o elemento de vídeo.
                   </video>';
         } else {
             // Verificar se o caminho do vídeo é correto
-            echo "Caminho do vídeo esperado: " . realpath($video_path) . "<br>";
+            echo "Caminho do vídeo esperado: $video_path<br>";
             echo "Arquivo não encontrado ou vídeo não especificado corretamente.";
         }
     } else {
