@@ -57,7 +57,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <iframe title="Relatório de Vídeo" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiODMwOWMwYzYtOTMxNi00MDA3LThkMmMtZDM2M2ViMzMxMGRjIiwidCI6ImUzZTRhMjYyLTMwY2EtNGRiMy1iZDVhLTFiZGJlMThhOGI4MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+                            <iframe title="Relatório de Vídeo" width="1080" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiODMwOWMwYzYtOTMxNi00MDA3LThkMmMtZDM2M2ViMzMxMGRjIiwidCI6ImUzZTRhMjYyLTMwY2EtNGRiMy1iZDVhLTFiZGJlMThhOGI4MSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
                         </div>
                     </div>
                 </div>
