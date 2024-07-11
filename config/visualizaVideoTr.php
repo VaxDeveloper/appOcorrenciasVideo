@@ -54,11 +54,11 @@ if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) 
 
         // Verifica e exibe o vídeo correspondente
         if ($video_column == 'video1' && !empty($caminho_arquivo1)) {
-            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo1));
+            $video_path = realpath("/public_html/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo1));
         } elseif ($video_column == 'video2' && !empty($caminho_arquivo2)) {
-            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo2));
+            $video_path = realpath("/public_html/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo2));
         } elseif ($video_column == 'video3' && !empty($caminho_arquivo3)) {
-            $video_path = realpath("C:/Users/Victor/source/repos/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo3));
+            $video_path = realpath("./public_html/App/bkp/_saomigueldeilheus/videos/" . basename($caminho_arquivo3));
         } else {
             $video_path = null;
         }
