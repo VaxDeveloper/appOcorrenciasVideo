@@ -10,17 +10,13 @@ if (!$conexao) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-// Consulta para obter a quantidade de cada tipo de ocorrência
-$query = "SELECT ocorrencia, COUNT(*) as quantidade FROM ocorrencia_finalizada GROUP BY ocorrencia";
+// Consulta para obter a quantidade total de ocorrências
+$query = "SELECT COUNT(*) as total_ocorrencias FROM ocorrencia_finalizada";
 $result = mysqli_query($conexao, $query);
 
-$data = array();
+$data = mysqli_fetch_assoc($result);
 
-while ($row = mysqli_fetch_assoc($result)) {
-    $data[] = $row;
-}
-
-// Retornar os dados em formato JSON
+// Retornar o dado em formato JSON
 echo json_encode($data);
 
 mysqli_close($conexao);

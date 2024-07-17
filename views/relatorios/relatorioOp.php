@@ -1,3 +1,4 @@
+<?php include('../../config/session_start.php'); ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="pt-br">
 
@@ -19,10 +20,10 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../view.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
                 </ul>
@@ -53,7 +54,7 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Dashboard Relatório Operacional</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
+                        <h3 class="text-dark mb-0">Dashboard Relatório Operacional</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xl-3 mb-4">
@@ -222,6 +223,7 @@
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/js/chart.min.js"></script>
     <script src="../../assets/js/bs-init.js"></script>
+    <script src="../../assets/js/relatorio.js"></script>
     <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/theme.js"></script>
 </body>

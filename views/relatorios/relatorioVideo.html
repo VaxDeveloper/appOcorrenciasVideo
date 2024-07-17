@@ -19,10 +19,10 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../view.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
                 </ul>
@@ -53,7 +53,7 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Dashboard Relatório de Ocorrências</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
+                        <h3 class="text-dark mb-0">Dashboard Relatório de Ocorrências</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xl-3 mb-4">
@@ -61,8 +61,8 @@
                                 <div class="card-body">
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>IPKE (Média)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>0.42</span></div>
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>oCORRÊNCIAS SEM TRATATIVAS</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>EM BREVE</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-balance-scale-right fa-2x text-gray-300"></i></div>
                                     </div>
@@ -74,10 +74,10 @@
                                 <div class="card-body">
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>IPK (Média)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;0.62</span></div>
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>OCORRÊNCIAS TRATADAS</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span id="totalOcorrencias"></span></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-balance-scale-left fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fas fa-check fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -87,10 +87,10 @@
                                 <div class="card-body">
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>KM / L (Média)</span></div>
+                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>TOTAL DE EVASÃO</span></div>
                                             <div class="row g-0 align-items-center">
                                                 <div class="col-auto col-xl-11">
-                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>2.67</span></div>
+                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>EM BREVE</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,8 +104,8 @@
                                 <div class="card-body">
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>km rodado (média)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>254.727 KM</span></div>
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>VALOR RETORNO</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>EM BREVE</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-road fa-2x text-gray-300"></i></div>
                                     </div>
@@ -117,7 +117,7 @@
                         <div class="col col-md-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">KM / L</h4>
+                                    <h4 class="card-title">Ocorrências</h4>
                                     <div>
                                         <canvas id="ocorrenciasChart" width="400" height="200"></canvas>
                                     </div>
@@ -224,8 +224,8 @@
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/js/chart.min.js"></script>
     <script src="../../assets/js/bs-init.js"></script>
-    <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/relatorio.js"></script>
+    <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/theme.js"></script>
 </body>
 
