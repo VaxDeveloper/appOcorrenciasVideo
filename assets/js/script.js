@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('tableContent').innerHTML = xhr.responseText;
             }
         };
-        xhr.send('rows=' + rowsPerPage);
+        xhr.send('rows=' + encodeURIComponent(rowsPerPage));
     });
 });

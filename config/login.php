@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
                     $_SESSION['user'] = $email;
                     $_SESSION['status'] = $row['status'];
                     $_SESSION['user_id'] = $row['id'];
-                    header("Location: ../views/relatorios.php");
+                    header("Location: ../views/ocorrenciasVideos.php");
                     exit();
                 } else {
                     // Senha inválida
