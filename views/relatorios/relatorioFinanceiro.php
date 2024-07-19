@@ -20,10 +20,10 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="../ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
                     <li class="nav-item"><a class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
                 </ul>
@@ -63,7 +63,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Pag. Acumulado (julho)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 245.012,00&nbsp;</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 295.720,40&nbsp;</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -76,7 +76,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>VT. Acumulado (julho)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 348.012,00&nbsp;</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 433.887,75&nbsp;</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -88,10 +88,10 @@
                                 <div class="card-body">
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Ranking SM x VM (julho)</span></div>
+                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>em breve</span></div>
                                             <div class="row g-0 align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>70%</span></div>
+                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>xxx</span></div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm">
@@ -111,7 +111,7 @@
                                     <div class="row g-0 align-items-center">
                                         <div class="col me-2">
                                             <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Total receita</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 593.024,00&nbsp;</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>&nbsp;R$ 984.669,60&nbsp;</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -132,7 +132,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Pag. Acumulado - SM x VM (Julho)</h4>
-                                    <div><canvas data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Pagantes SM&quot;,&quot;Pagantes VM&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;rgb(78,115,223)&quot;,&quot;rgb(255,134,134)&quot;],&quot;borderColor&quot;:[&quot;rgba(0,0,0,0.1)&quot;,&quot;rgba(0,0,0,0.1)&quot;],&quot;data&quot;:[&quot;24501200 &quot;,&quot;29557440 &quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;},&quot;position&quot;:&quot;right&quot;},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;,&quot;display&quot;:false,&quot;text&quot;:&quot;&quot;}}}"></canvas></div>
+                                    <div><canvas data-bss-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Pagantes SM&quot;,&quot;Pagantes VM&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;rgb(78,115,223)&quot;,&quot;rgb(255,134,134)&quot;],&quot;borderColor&quot;:[&quot;rgba(0,0,0,0.1)&quot;,&quot;rgba(0,0,0,0.1)&quot;],&quot;data&quot;:[&quot;29572040 &quot;,&quot;36039360 &quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;},&quot;position&quot;:&quot;right&quot;},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;,&quot;display&quot;:false,&quot;text&quot;:&quot;&quot;}}}"></canvas></div>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Acompanhamento diário - Pagantes SM x VM (Julho)</h4>
-                                    <div><canvas data-bss-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;01/07/2024&quot;,&quot;02/07/2024&quot;,&quot;03/07/2024&quot;,&quot;04/07/2024&quot;,&quot;05/07/2024&quot;,&quot;06/07/2022&quot;,&quot;07/07/2024&quot;,&quot;08/07/2024&quot;,&quot;09/07/2024&quot;,&quot;10/07/2024&quot;,&quot;11/07/2004&quot;,&quot;12/07/2024&quot;,&quot;13/07/2024&quot;,&quot;14/07/2022&quot;,&quot;15/07/2024&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;SM&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot; 2040480 &quot;,&quot; 517920 &quot;,&quot; 2393760 &quot;,&quot; 2055840 &quot;,&quot;2215200&quot;,&quot; 1328640 &quot;,&quot; 461280 &quot;,&quot; 2248320 &quot;,&quot; 2008320 &quot;,&quot; 1937360 &quot;,&quot;1853279&quot;,&quot; 1787040 &quot;,&quot; 1278240 &quot;,&quot;518400 &quot;,&quot;1857120\t&quot;]},{&quot;label&quot;:&quot;VM&quot;,&quot;backgroundColor&quot;:&quot;rgb(255,134,134)&quot;,&quot;borderColor&quot;:&quot;rgb(255,134,134)&quot;,&quot;data&quot;:[&quot;2437440 &quot;,&quot;606720 &quot;,&quot;2725440 &quot;,&quot;2366880 &quot;,&quot;2517600 &quot;,&quot;1682880 &quot;,&quot;642240 &quot;,&quot;2673120 &quot;,&quot;2419680 &quot;,&quot;2309280 &quot;,&quot;2216640 &quot;,&quot;2312160 &quot;,&quot;1604160 &quot;,&quot;647520 &quot;,&quot;2395680 &quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}]}}}"></canvas></div>
+                                    <div><canvas data-bss-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;01/07/2024&quot;,&quot;02/07/2024&quot;,&quot;03/07/2024&quot;,&quot;04/07/2024&quot;,&quot;05/07/2024&quot;,&quot;06/07/2022&quot;,&quot;07/07/2024&quot;,&quot;08/07/2024&quot;,&quot;09/07/2024&quot;,&quot;10/07/2024&quot;,&quot;11/07/2004&quot;,&quot;12/07/2024&quot;,&quot;13/07/2024&quot;,&quot;14/07/2022&quot;,&quot;15/07/2024&quot;,&quot;16/07/2024&quot;,&quot;17/07/2024&quot;,&quot;18/07/2024&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;SM&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot; 2040480 &quot;,&quot; 517920 &quot;,&quot; 2393760 &quot;,&quot; 2055840 &quot;,&quot;2215200&quot;,&quot; 1328640 &quot;,&quot; 461280 &quot;,&quot; 2248320 &quot;,&quot; 2008320 &quot;,&quot; 1937360 &quot;,&quot;1853279&quot;,&quot; 1787040 &quot;,&quot; 1278240 &quot;,&quot;518400 &quot;,&quot;1857120\t&quot;,&quot; 1774080 &quot;,&quot; 1630080 &quot;,&quot; 1666680 &quot;]},{&quot;label&quot;:&quot;VM&quot;,&quot;backgroundColor&quot;:&quot;rgb(255,134,134)&quot;,&quot;borderColor&quot;:&quot;rgb(255,134,134)&quot;,&quot;data&quot;:[&quot;2437440 &quot;,&quot;606720 &quot;,&quot;2725440 &quot;,&quot;2366880 &quot;,&quot;2517600 &quot;,&quot;1682880 &quot;,&quot;642240 &quot;,&quot;2673120 &quot;,&quot;2419680 &quot;,&quot;2309280 &quot;,&quot;2216640 &quot;,&quot;2312160 &quot;,&quot;1604160 &quot;,&quot;647520 &quot;,&quot;2395680 &quot;,&quot;2156160 &quot;,&quot;2118240 &quot;,&quot;2207520 &quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}]}}}"></canvas></div>
                                 </div>
                             </div>
                         </div>
@@ -248,8 +248,26 @@
                                         <tr>
                                             <td>15/07/24</td>
                                             <td>18.571,20</td>
-                                            <td>29.677,50</td>
+                                            <td>30.033,00</td>
                                             <td>48.248,70</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16/07/24</td>
+                                            <td>17.740,80&nbsp;</td>
+                                            <td>31.826,25&nbsp;</td>
+                                            <td>49.567,05&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/07/24</td>
+                                            <td>16.300,80&nbsp;</td>
+                                            <td>26.826,75&nbsp;</td>
+                                            <td>43.127,55&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18/07/24</td>
+                                            <td>16.666,80&nbsp;</td>
+                                            <td>26.752,50&nbsp;</td>
+                                            <td>43.419,30&nbsp;</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -355,8 +373,26 @@
                                         <tr>
                                             <td>15/07/24</td>
                                             <td>23.956,80&nbsp;</td>
-                                            <td>46.262,25&nbsp;</td>
-                                            <td>70.219,05&nbsp;</td>
+                                            <td>47.792,25&nbsp;</td>
+                                            <td>71.749,05&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16/07/24</td>
+                                            <td>21.561,60&nbsp;</td>
+                                            <td>45.459,00&nbsp;</td>
+                                            <td>67.020,60&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/07/24</td>
+                                            <td>21.182,40&nbsp;</td>
+                                            <td>48.809,25&nbsp;</td>
+                                            <td>69.991,65&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18/07/24</td>
+                                            <td>22.075,20&nbsp;</td>
+                                            <td>43.033,50&nbsp;</td>
+                                            <td>65.108,70&nbsp;</td>
                                         </tr>
                                     </tbody>
                                 </table>
