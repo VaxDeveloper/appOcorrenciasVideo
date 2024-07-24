@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                             <div id="tableContent">
-                                <?php include '../config/dados.php'; ?>
+                                <?php include '../config/dados.php';?>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 align-self-center">
@@ -107,7 +107,6 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/bs-init.js"></script>
     <script src="../assets/js/relatorio.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme.js"></script>
