@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/detalhesMotoristasEvasao.css">
 </head>
 
 <body id="page-top">
@@ -21,6 +22,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ocorrenciasEvasao.html"><i class="fas fa-table"></i><span>Evasão</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
@@ -59,7 +61,7 @@
                     <div class="card shadow">
                         <div class="card-body">
                             <div>
-                                <?php include '../config/ver_ocorrencia.php'; ?>
+                                <?php include '../config/ver_ocorrencia.php';?>
                             </div>
                         </div>
                     </div>
