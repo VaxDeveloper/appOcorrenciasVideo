@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Ocorrências',
+                            label: 'Ocorrências Tratadas',
                             data: quantities,
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
                             borderColor: 'rgba(75, 192, 192, 1)',
