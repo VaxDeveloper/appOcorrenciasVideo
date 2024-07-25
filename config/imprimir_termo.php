@@ -196,7 +196,7 @@ mysqli_close($conexao);
         </table>
         <div>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E por estarem as partes certas, justas e contratadas, firmam o presente.</p>
-            <p id="dataatual"><?php echo $data_atual_extenso; ?></p>
+            <p id="dataatual">Ilhéus, <?php echo $data_atual_extenso; ?></p>
         </div>
         
         <div class="assinatura">
