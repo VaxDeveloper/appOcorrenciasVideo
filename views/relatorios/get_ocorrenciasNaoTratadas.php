@@ -11,7 +11,7 @@ if (!$conexao) {
 }
 
 // Consulta para obter a quantidade de cada tipo de ocorrência
-$query = "SELECT ocorrencia, COUNT(*) as quantidade FROM ocorrencia_finalizada GROUP BY ocorrencia";
+$query = "SELECT ocorrencia, COUNT(*) as quantidade FROM ocorrencia_trafego GROUP BY ocorrencia";
 $result = mysqli_query($conexao, $query);
 
 $data = array();

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch para obter as ocorrências para o gráfico
+    // Fetch para obter as ocorrências para o gráfico 1
     fetch('get_ocorrencias.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Adicione esta linha para depurar os dados recebidos
+            console.log('Dados do gráfico 1:', data); // Depurar os dados recebidos
             const labels = data.map(item => item.ocorrencia);
             const quantities = data.map(item => item.quantidade);
 
@@ -40,15 +40,53 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Erro ao buscar dados:', error));
 
+    // Fetch para obter as ocorrências não tratadas para o gráfico 2
+    fetch('get_ocorrenciasNaoTratadas.php')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Dados do gráfico 2:', data); // Depurar os dados recebidos
+            const labels = data.map(item => item.ocorrencia);
+            const quantities = data.map(item => item.quantidade);
+
+            const ctx2 = document.getElementById('ocorrenciasChartNaoTratadas').getContext('2d');
+            if (ctx2) {
+                const ocorrenciasChartNaoTratadas = new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Ocorrências Não Tratadas',
+                            data: quantities,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error('Elemento com id "ocorrenciasChartNaoTratadas" não encontrado.');
+            }
+        })
+        .catch(error => console.error('Erro ao buscar dados:', error));
+
     // Fetch para obter a contagem total de ocorrências
     fetch('get_total_ocorrencias.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Adicione esta linha para depurar os dados recebidos
+            console.log('Total de ocorrências:', data); // Depurar os dados recebidos
             const totalOcorrencias = data.total_ocorrencias;
-
-            // Atualize o DOM ou use o valor conforme necessário
-            console.log('Total de Ocorrências:', totalOcorrencias);
 
             // Exemplo de como atualizar um elemento no DOM com o total de ocorrências
             const ocorrenciasElement = document.getElementById('totalOcorrencias');
@@ -64,11 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('get_total_ocorrenciasSemTratar.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Adicione esta linha para depurar os dados recebidos
+            console.log('Total de ocorrências sem tratar:', data); // Depurar os dados recebidos
             const totalOcorrencias = data.total_ocorrencias;
-
-            // Atualize o DOM ou use o valor conforme necessário
-            console.log('Total de Ocorrências:', totalOcorrencias);
 
             // Exemplo de como atualizar um elemento no DOM com o total de ocorrências
             const ocorrenciasElement = document.getElementById('totalOcorrenciasSemTratar');
@@ -79,4 +114,54 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => console.error('Erro ao buscar dados:', error));
+
+    // Função para obter o valor total de ocorrências de evasão recuperado
+    function getValorEvasaoRecuperado() {
+        fetch('get_valor_evasao_recuperado.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Valor de evasão recuperado:', data); // Adicione esta linha para depurar os dados recebidos
+
+                if (data.success) {
+                    // Atualize o DOM com o valor recuperado
+                    const ocorrenciasElement = document.getElementById('ocorrenciasValorRecuperado');
+                    if (ocorrenciasElement) {
+                        ocorrenciasElement.textContent = `R$ ${data.valor_a_pagar}`;
+                    } else {
+                        console.error('Elemento com id "ocorrenciasValorRecuperado" não encontrado.');
+                    }
+                } else {
+                    console.error('Erro: ', data.message);
+                }
+            })
+            .catch(error => console.error('Erro ao buscar dados:', error));
+    }
+
+    // Chama a função para obter o valor de evasão recuperado
+    getValorEvasaoRecuperado();
+
+    // Função para obter o valor total de ocorrências de evasão devido
+    function getValorEvasaoDevido() {
+        fetch('get_valor_evasao_devido.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Valor de evasão devido:', data); // Adicione esta linha para depurar os dados recebidos
+
+                if (data.success) {
+                    // Atualize o DOM com o valor devido
+                    const ocorrenciasElement = document.getElementById('ocorrenciasValorDevido');
+                    if (ocorrenciasElement) {
+                        ocorrenciasElement.textContent = `R$ ${data.valor_a_pagar}`;
+                    } else {
+                        console.error('Elemento com id "ocorrenciasValorDevido" não encontrado.');
+                    }
+                } else {
+                    console.error('Erro: ', data.message);
+                }
+            })
+            .catch(error => console.error('Erro ao buscar dados:', error));
+    }
+
+    // Chama a função para obter o valor de evasão devido
+    getValorEvasaoDevido();
 });
