@@ -65,13 +65,13 @@ if (isset($_GET['motorista'])) {
                     <td class='break-word'>" . htmlspecialchars($row['descricao']) . "</td>
                     <td>";
             if ($row['video1']) {
-                echo "<a href='../views/visualizaVideo.php?video1=" . urlencode($row['id']) . "'>Vídeo-1</a><br>";
+                echo "<a href='../views/VisualizaVideo.php?video1=" . urlencode($row['id']) . "'>Vídeo-1</a><br>";
             }
             if ($row['video2']) {
-                echo "<a href='../views/visualizaVideo.php?video2=" . urlencode($row['id']) . "'>Vídeo-2</a><br>";
+                echo "<a href='../views/VisualizaVideo.php?video2=" . urlencode($row['id']) . "'>Vídeo-2</a><br>";
             }
             if ($row['video3']) {
-                echo "<a href='../views/visualizaVideo.php?video3=" . urlencode($row['id']) . "'>Vídeo-3</a><br>";
+                echo "<a href='../views/VisualizaVideo.php?video3=" . urlencode($row['id']) . "'>Vídeo-3</a><br>";
             }
             echo "</td>
                   </tr>";
