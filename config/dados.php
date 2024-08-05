@@ -7,7 +7,8 @@ $rowsPerPage = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 
 // Verifica se a conexão está definida e não é null
 if ($conexao) {
-    $consulta_sql = "SELECT * FROM ocorrencia_trafego ORDER BY id DESC LIMIT $rowsPerPage";
+    // Modifica a consulta SQL para excluir ocorrências de Evasão
+    $consulta_sql = "SELECT * FROM ocorrencia_trafego WHERE ocorrencia != 'Evasão' ORDER BY id DESC LIMIT $rowsPerPage";
     $resultado_consulta = mysqli_query($conexao, $consulta_sql);
 
     if ($resultado_consulta) {
@@ -37,7 +38,7 @@ if ($conexao) {
                 <td class='text-center align-middle mobile-report'>{$linha['linha']}</td>
                 <td class='text-start align-middle'>{$linha['ocorrencia']}</td>
                 <td class='text-center align-middle update-action-column'>
-                    <a href='../views/view.php?id={$linha['id']}' class='btn btn-outline-danger btn-sm'>Finalizar</a>
+                    <a href='../views/view.php?id={$linha['id']}' class='btn btn-outline-danger btn-sm'>Abrir OS</a>
                 </td>
             </tr>";
         }

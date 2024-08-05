@@ -1,34 +1,36 @@
 <?php
-// Verifica se o usuário está logado e tem permissão (status 1 ou 10)
+// Inicia a sessão
+session_start();
+
+// Verifica se o usuário está logado e tem permissão (status)
 if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'] != 10 && $_SESSION['status'] != 11)) {
     // Se não estiver logado ou não tiver permissão, redireciona para a página de login
     header("Location: index.php");
     exit();
 }
 
+// Importa as configurações do banco de dados
+require_once 'database.php';
+
+// Verifica se a conexão foi estabelecida com sucesso
+if (!$conexao) {
+    die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
+}
+
 // Verifica se os dados foram enviados via método POST e se os campos necessários estão definidos
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_ocorrencia"]) && isset($_POST["motorista"]) && isset($_POST["observacoes"]) && isset($_POST["acao"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_ocorrencia"]) && isset($_POST["observacoes"]) && isset($_POST["acao"])) {
     // Recupera os dados do formulário
     $id = $_POST["id_ocorrencia"];
-    $novo_motorista = $_POST["motorista"];
     $observacoes = $_POST["observacoes"];
     $acao = $_POST["acao"];
 
-    // Importa as configurações do banco de dados
-    require_once 'database.php';
-
-    // Verifica se a conexão foi estabelecida com sucesso
-    if (!$conexao) {
-        die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
-    }
-
-    // Prepara a consulta SQL para atualizar o motorista, as observações e a ação
-    $sql = "UPDATE u219851065_smiguel.ocorrencia_trafego SET motorista = ?, observacoes = ?, acao = ? WHERE id = ?";
+    // Prepara a consulta SQL para atualizar as observações e a ação
+    $sql = "UPDATE u219851065_smiguel.ocorrencia_trafego SET observacoes = ?, acao = ? WHERE id = ?";
     
     // Prepara a declaração SQL
     if ($stmt = mysqli_prepare($conexao, $sql)) {
         // Associa as variáveis aos parâmetros da declaração preparada
-        mysqli_stmt_bind_param($stmt, "sssi", $novo_motorista, $observacoes, $acao, $id);
+        mysqli_stmt_bind_param($stmt, "ssi", $observacoes, $acao, $id);
 
         // Executa a declaração
         if (mysqli_stmt_execute($stmt)) {

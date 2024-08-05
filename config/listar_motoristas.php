@@ -10,8 +10,8 @@ if (!$conexao) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-// Buscar motoristas com "Evasão"
-$query = "SELECT DISTINCT motorista FROM ocorrencia_trafego WHERE ocorrencia = 'Evasão'";
+// Buscar motoristas com "Evasão" e ordenar numericamente
+$query = "SELECT DISTINCT motorista FROM ocorrencia_trafego WHERE ocorrencia = 'Evasão' ORDER BY CAST(motorista AS UNSIGNED) ASC";
 $resultado = mysqli_query($conexao, $query);
 
 if (mysqli_num_rows($resultado) > 0) {

@@ -1,13 +1,21 @@
 <?php
+// Importa as configurações do banco de dados
+require_once 'database.php';
+
+// Criar conexão
+$conexao = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+
+// Verificar conexão
+if (!$conexao) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
+
 // Verifica se o ID da ocorrência foi passado na URL
 if (isset($_GET['id'])) {
     $id_ocorrencia = intval($_GET['id']); // Certifique-se de converter o valor para um inteiro
 
-    // Importa as configurações do banco de dados
-    require_once 'database.php';
-
     // Prepara e executa a consulta para obter os detalhes da ocorrência com base no ID
-    $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_trafego WHERE id = ?";
+    $consulta_sql = "SELECT * FROM ocorrencia_trafego WHERE id = ?";
     $stmt = mysqli_prepare($conexao, $consulta_sql);
     mysqli_stmt_bind_param($stmt, 'i', $id_ocorrencia);
     mysqli_stmt_execute($stmt);
@@ -24,8 +32,8 @@ if (isset($_GET['id'])) {
 
         // Exibe os detalhes da ocorrência
         echo "<div class='container detalhes-ocorrencia'>";
-        echo "<div class='row my-4' style='color: #adb5bd;'>";
-        echo "<div class='col-4 detalhes-info-1' style='border-right: solid 1px #6c757d;'>";
+        echo "<div class='row my-2' style='color: #5a5f64;'>";
+        echo "<div class='col-4 detalhes-info-1' style='border-right: solid 1px #d8dee3;'>";
         echo "<p><strong>ID Ocorrência:</strong> " . htmlspecialchars($detalhes_ocorrencia['id']) . "</p>";
         echo "<p><strong>Data:</strong> " . htmlspecialchars($detalhes_ocorrencia['data']) . "</p>";
         echo "<p><strong>Horário:</strong> " . htmlspecialchars($detalhes_ocorrencia['horario']) . "</p>";
@@ -36,13 +44,13 @@ if (isset($_GET['id'])) {
 
         // Constrói o caminho do arquivo de vídeo
         if ($caminho_arquivo1) {
-            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video1=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-1</a>";
+            echo "<a class='mx-2 link-danger' href='VisualizaVideo.php?video1=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-1</a>";
         }
         if ($caminho_arquivo2) {
-            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video2=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-2</a>";
+            echo "<a class='mx-2 link-danger' href='VisualizaVideo.php?video2=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-2</a>";
         }
         if ($caminho_arquivo3) {
-            echo "<a class='mt-1 mx-2 link-danger' href='VisualizaVideo.php?video3=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-3</a>";
+            echo "<a class='mx-2 link-danger' href='VisualizaVideo.php?video3=" . htmlspecialchars($detalhes_ocorrencia['id']) . "'>Vídeo-3</a>";
         }
         echo "</div>";
         echo "</div>";
@@ -58,51 +66,35 @@ if (isset($_GET['id'])) {
         echo "</div>";
 
         // Adiciona uma linha separadora
-        echo "<div style='border-top: 1px solid #6c757d;'></div>";
+        echo "<div style='border-top: 1px solid #d8dee3;'></div>";
 
         // Adicionar um formulário para enviar as informações do motorista, ação e observações
-        echo "<div class='container p-3'>";
-        echo "<form action='atualiza.php' method='post'>";
-
-        // Div para o campo de seleção de motorista
-        echo "<div class='row my-4'>";
-        echo "<div class='col-6 select-group'>";
-        echo "<p for='motorista'></p>";
-        echo "<select class='form-select' name='motorista' id='motorista'>";
-        echo "<option value=''>Informe o Motorista</option>";
-        // Exemplo de opções de motoristas
-        // ...
-        echo "</select>";
-
-        // Div para o campo de seleção de ação
-        echo "<p for='acao'></p>";
-        echo "<select class='form-select' name='acao' id='acao'>";
-        echo "<option value=''>Informe a Ação tomada</option>";
-        // ...
-        echo "</select>";
-        echo "</div>";
-        echo "<div class='col-6 mt-4 Front-desk'>";
-        echo "<p for='acao' style='font-size: .9rem;'>1) Preencha os campos em aberto da ocorrência.</p>";
-        echo "<p for='acao' style='font-size: .9rem;'>2) Clique no botão 'ATUALIZAR E FINALIZAR' para que os dados sejam registrados e finalizados.</p>";
-        echo "</div>";
-        echo "</div>";
+        echo "<div class='container'>";
+        echo "<form action='finalizar_ocorrencia.php' method='get'>";
+        echo "<div class='row my-3'>";
 
         // Div para o campo de texto de observações
-        echo "<div class='text-center'>";
-        echo "<p for='observacoes'>Observações:</p>";
-        echo "<div class='row'>";
-        echo "<div class='col-2'></div>";
-        echo "<div class='col-8'>";
-        echo "<textarea class='form-control' name='observacoes' id='observacoes' rows='4' cols='50'></textarea>";
+        echo "<div class='col-6'>";
+        echo "<label for='observacoes'>Observações:</label>";
+        echo "<textarea class='form-control' name='observacoes' id='observacoes' rows='3' required></textarea>";
         echo "</div>";
-        echo "<div class='col-2'></div>";
-        echo "</div>";
+
+        // Div para o campo de seleção de ação
+        echo "<div class='col-6'>";
+        echo "<label for='acao'>Ação:</label>";
+        echo "<select class='form-select' name='acao' id='acao' required>";
+        echo "<option value='teste'>Informe a Ação tomada</option>";
+        // Adicionar as opções do select aqui, se houver
+        echo "</select>";
 
         // Adicionar um campo oculto para enviar o ID da ocorrência
-        echo "<input type='hidden' name='id_ocorrencia' value='" . htmlspecialchars($id_ocorrencia) . "'>";
+        echo "<input type='hidden' name='id' value='" . htmlspecialchars($id_ocorrencia) . "'>";
 
         // Botão de envio do formulário
-        echo "<input class='btn btn-outline-danger mt-3' type='submit' value='>>> ATUALIZAR e FINALIZAR <<<'>";
+        echo "<input class='btn btn-outline-danger mt-2' type='submit' value='>>>  FINALIZAR OS  <<<'>";
+        echo "</div>";
+
+        echo "</div>";
         echo "</form>";
         echo "</div>";
 

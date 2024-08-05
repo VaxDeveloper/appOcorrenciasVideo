@@ -33,7 +33,7 @@ if (isset($_GET['motorista'])) {
         }
         $datas_ocorrencias_str = '';
         foreach ($ocorrencias_por_data as $data => $quantidade) {
-            $datas_ocorrencias_str .= $data ;
+            $datas_ocorrencias_str .= $data . ', ';
         }
         $datas_ocorrencias_str = rtrim($datas_ocorrencias_str, ', ');
 
@@ -80,7 +80,7 @@ if (isset($_GET['motorista'])) {
         echo "</div>";
 
         // Exibir o valor a pagar e o link para imprimir o termo
-        echo "<div class='imprimir_termo'><p><strong>Total a pagar: R$ " . number_format($valor_a_pagar, 2, ',', '.') . "</strong> <a href='../config/imprimir_termo.php?motorista=$motorista&valor=" . urlencode($valor_a_pagar) . "&datas=" . urlencode($datas_ocorrencias_str) . "' target='_blank'>Imprimir Termo</a></div></p>";
+        echo "<div class='imprimir_termo'><p><strong>Total a pagar: R$ " . number_format($valor_a_pagar, 2, ',', '.') . "</strong> <a href='#' id='imprimir_termo_link' data-motorista='$motorista' data-valor='" . urlencode($valor_a_pagar) . "' data-datas='" . urlencode($datas_ocorrencias_str) . "'>Imprimir Termo</a></div></p>";
     } else {
         echo "Nenhuma ocorrência de evasão encontrada para o motorista: " . htmlspecialchars($motorista);
     }
@@ -90,3 +90,16 @@ if (isset($_GET['motorista'])) {
 
 mysqli_close($conexao);
 ?>
+<script>
+document.getElementById('imprimir_termo_link').addEventListener('click', function(e) {
+    e.preventDefault();
+    var motorista = this.getAttribute('data-motorista');
+    var valor = this.getAttribute('data-valor');
+    var datas = this.getAttribute('data-datas');
+
+    var popupWindow = window.open(`../config/imprimir_termo.php?motorista=${encodeURIComponent(motorista)}&valor=${encodeURIComponent(valor)}&datas=${encodeURIComponent(datas)}`, 'popupWindow', 'width=800,height=600');
+    popupWindow.onload = function() {
+        popupWindow.print();
+    };
+});
+</script>

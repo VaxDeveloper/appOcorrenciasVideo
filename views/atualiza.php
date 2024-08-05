@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/detalhesMotoristasEvasao.css">
 </head>
 
 <body id="page-top">
@@ -21,11 +22,12 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="ocorrenciasVideos.php"><i class="fas fa-table"></i><span>Ocorrências</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorioVideo.php"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ocorrenciasEvasao.html"><i class="fas fa-table"></i><span>Evasão</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
+                    <li class="nav-item"><a class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item"><a class="nav-link"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -43,7 +45,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><img id="id-logo" src="../assets/img/logo/logo.png" alt="saoMiguel" width="140"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><img id="id-logo" src="../../assets/img/logo/logo.png" alt="saoMiguel" width="140"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -54,12 +56,12 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Informação do sistema!!!</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
+                        <h3 class="text-dark mb-0">Informação do sistema!!!</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="../../config/logout.php"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Fazer Logout</a>
                     </div>
                     <div class="card shadow">
                         <div class="card-body">
                             <div>
-                                <?php include '../config/atualizaTr.php';?>
+                                <?php include '../config/finalizar_ocorrencia.php'; ?>
                             </div>
                         </div>
                     </div>
@@ -74,6 +76,7 @@
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/relatorio.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/theme.js"></script>
 </body>
