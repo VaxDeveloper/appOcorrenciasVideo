@@ -61,7 +61,7 @@
                     <div class="card shadow">
                         <div class="card-body">
                             <div>
-                                <?php include '../config/finalizar_ocorrencia.php'; ?>
+                                <?php include '../config/mover_ocorrencia.php'; ?>
                             </div>
                         </div>
                     </div>

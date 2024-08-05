@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
 
         // Adicionar um formulário para enviar as informações do motorista, ação e observações
         echo "<div class='container'>";
-        echo "<form action='finalizar_ocorrencia.php' method='get'>";
+        echo "<form action='../views/atualiza.php' method='get'>";
         echo "<div class='row my-3'>";
 
         // Div para o campo de texto de observações
@@ -83,8 +83,23 @@ if (isset($_GET['id'])) {
         echo "<div class='col-6'>";
         echo "<label for='acao'>Ação:</label>";
         echo "<select class='form-select' name='acao' id='acao' required>";
-        echo "<option value='teste'>Informe a Ação tomada</option>";
-        // Adicionar as opções do select aqui, se houver
+        echo "<option value=''>Informe a Ação tomada</option>";
+
+        // Consulta para obter os tipos de ação
+        $query = "SELECT id, descricao FROM cadastroTipoAcao";
+        $resultado = mysqli_query($conexao, $query);
+
+        if ($resultado) {
+            // Preencher o select com as opções do banco de dados
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                $id = htmlspecialchars($row['id']);
+                $descricao = htmlspecialchars($row['descricao']);
+                echo "<option value='$id'>$descricao</option>";
+            }
+        } else {
+            echo "<option value=''>Nenhuma ação disponível</option>";
+        }
+
         echo "</select>";
 
         // Adicionar um campo oculto para enviar o ID da ocorrência
