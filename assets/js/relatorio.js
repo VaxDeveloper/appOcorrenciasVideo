@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch para obter as ocorrências para o gráfico 1
-    fetch('get_ocorrencias.php')
+    fetch('/../views/relatorios/get_ocorrencias.php')
         .then(response => response.json())
         .then(data => {
             console.log('Dados do gráfico 1:', data); // Depurar os dados recebidos
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Erro ao buscar dados:', error));
 
     // Fetch para obter as ocorrências não tratadas para o gráfico 2
-    fetch('get_ocorrenciasNaoTratadas.php')
+    fetch('/../views/relatorios/get_ocorrenciasNaoTratadas.php')
         .then(response => response.json())
         .then(data => {
             console.log('Dados do gráfico 2:', data); // Depurar os dados recebidos
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Erro ao buscar dados:', error));
 
     // Fetch para obter a contagem total de ocorrências
-    fetch('get_total_ocorrencias.php')
+    fetch('/../views/relatorios/get_total_ocorrencias.php')
         .then(response => response.json())
         .then(data => {
             console.log('Total de ocorrências:', data); // Depurar os dados recebidos
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Erro ao buscar dados:', error));
 
     // Fetch para obter a contagem total de ocorrências sem tratativas
-    fetch('get_total_ocorrenciasSemTratar.php')
+    fetch('/../views/relatorios/get_total_ocorrenciasSemTratar.php')
         .then(response => response.json())
         .then(data => {
             console.log('Total de ocorrências sem tratar:', data); // Depurar os dados recebidos
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Função para obter o valor total de ocorrências de evasão recuperado
     function getValorEvasaoRecuperado() {
-        fetch('get_valor_evasao_recuperado.php')
+        fetch('/../views/relatorios/get_valor_evasao_recuperado.php')
             .then(response => response.json())
             .then(data => {
                 console.log('Valor de evasão recuperado:', data); // Adicione esta linha para depurar os dados recebidos
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Função para obter o valor total de ocorrências de evasão devido
     function getValorEvasaoDevido() {
-        fetch('get_valor_evasao_devido.php')
+        fetch('/../views/relatorios/get_valor_evasao_devido.php')
             .then(response => response.json())
             .then(data => {
                 console.log('Valor de evasão devido:', data); // Adicione esta linha para depurar os dados recebidos
