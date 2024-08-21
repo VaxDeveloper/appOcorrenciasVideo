@@ -175,7 +175,7 @@ document.getElementById('imprimir_termo_link').addEventListener('click', functio
             var response = xhr.responseText;
             if (response.trim() === "Ação disciplinar salva com sucesso.") {
                 // Abrir o PDF para impressão
-                var popupWindow = window.open('/../config/print_term.php?motorista=' + encodeURIComponent(motorista) + '&valor=' + encodeURIComponent(valor) + '&datas=' + encodeURIComponent(datas), '_blank');
+                var popupWindow = window.open('../config/print_term.php?motorista=' + encodeURIComponent(motorista) + '&valor=' + encodeURIComponent(valor) + '&datas=' + encodeURIComponent(datas), '_blank');
                 popupWindow.focus();
             } else {
                 alert("Erro ao salvar a ação disciplinar: " + response);

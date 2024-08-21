@@ -25,10 +25,7 @@
                     <li class="nav-item"><a class="nav-link" href="ocorrenciasEvasao.php"><i class="fas fa-table"></i><span>Evasão</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="relatorios/relatorioVideo.html"><i class="fas fa-tachometer-alt"></i><span>Vídeo</span></a></li>
                     
-                    <!-- Verifique se o item "Financeiro" deve ser exibido -->
-                    <?php if (!$financeiro_desabilitado): ?>
-                        <li class="nav-item"><a class="nav-link" href="relatorios/relatorioFinanceiro.php"><i class="fas fa-tachometer-alt"></i><span>Financeiro</span></a></li>
-                    <?php endif; ?>
+
                     
                     <li class="nav-item"><a class="nav-link" href="relatorios/relatorioOp.php"><i class="fas fa-tachometer-alt"></i><span>Operacional</span></a></li>
                     <li class="nav-item"><a class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a></li>

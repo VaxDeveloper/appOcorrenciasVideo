@@ -1,9 +1,6 @@
 <?php
-// Configurações do banco de dados
-$dbHost = "localhost";
-$dbUser = "u219851065_admin";
-$dbPassword = "Xavier364074$";
-$dbName = "u219851065_smiguel";
+// Importa as configurações do banco de dados
+require_once 'database.php';
 
 // Criar conexão
 $conexao = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
