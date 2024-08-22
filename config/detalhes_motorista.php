@@ -159,6 +159,12 @@ if (isset($_GET['motorista'])) {
 mysqli_close($conexao);
 ?>
 
+<!-- Botão para imprimir a ação disciplinar -->
+<a href="../config/imprimir_acao_disciplinar.php?motorista_id=<?php echo urlencode($motorista_id); ?>" target="_blank">
+    <button>Imprimir Ação Disciplinar</button>
+</a>
+
+
 <script>
 document.getElementById('imprimir_termo_link').addEventListener('click', function(e) {
     e.preventDefault();
